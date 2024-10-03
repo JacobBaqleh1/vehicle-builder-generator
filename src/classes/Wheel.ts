@@ -19,6 +19,10 @@ class Wheel {
   get getTireBrand(): string {
     return this.tireBrand;
   }
+
+  toString(): string {
+    return `Diameter: ${this.diameter}, Brand: ${this.tireBrand}`;
+  }
 }
 
 // Export the Wheel class

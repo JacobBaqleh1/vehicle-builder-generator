@@ -29,10 +29,9 @@ class Truck extends Vehicle implements AbleToTow {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[],
-    towingCapacity: number
-  ) // TODO: The constructor should call the constructor of the parent class, Vehicle
-  {
+    towingCapacity: number,
+    wheels: Wheel[] // TODO: The constructor should call the constructor of the parent class, Vehicle
+  ) {
     super();
     // TODO: The constructor should initialize the properties of the Truck class
     this.vin = vin;
@@ -53,14 +52,16 @@ class Truck extends Vehicle implements AbleToTow {
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
     // TODO: Get the make an model of the vehicle if it exists
-    const { make, model, weight } = vehicle;
-    // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
-    if (weight <= this.towingCapacity) {
-      console.log(`Your vehicle, ${make},${model} can be towed`);
-    } else {
-      console.log(
-        `The vehicle, ${make},${model} is too heavy and cannot be towed`
-      );
+    if (vehicle) {
+      const { make, model, weight } = vehicle;
+      // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
+      if (weight <= this.towingCapacity) {
+        console.log(`Your vehicle, ${make},${model} can be towed`);
+      } else {
+        console.log(
+          `The vehicle, ${make},${model} is too heavy and cannot be towed`
+        );
+      }
     }
     // TODO: If it is, log that the vehicle is being towed
     // TODO: If it is not, log that the vehicle is too heavy to be towed
