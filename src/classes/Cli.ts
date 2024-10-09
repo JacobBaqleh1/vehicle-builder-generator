@@ -420,6 +420,8 @@ class Cli {
               const motorbike = this.vehicles[i] as Motorbike;
               motorbike.wheelie(motorbike);
               break;
+            } else {
+              console.log("Wheelies can only be done on motorbikes");
             }
           }
         } else if (answers.action === "Select or create another vehicle") {
